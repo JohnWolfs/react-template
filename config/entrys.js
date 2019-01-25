@@ -5,7 +5,12 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-var files = fs.readdirSync(resolve('/src/pages/'))
+var files = []
+try {
+  files = fs.readdirSync(resolve('/src/pages/')) || []
+} catch (e) {
+  files = []
+}
 var res = []
 
 for(var i = 0; i < files.length; i++) {
