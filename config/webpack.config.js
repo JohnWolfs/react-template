@@ -214,7 +214,7 @@ module.exports = function (webpackEnv) {
     },
     resolve: {
 
-      modules: ['node_modules'].concat(
+      modules: ['node_modules', path.resolve(__dirname, './src')].concat(
         process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
       ),
 
